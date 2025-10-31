@@ -21,9 +21,9 @@ function cleanString(str) {
 async function searchWord(language, length, number) {
   const url = `https://random-word-api.herokuapp.com/word?number=${number}&lang=${language}&length=${length}`;
 
-  console.log(
-    `🔍 Buscando palavras: ${language}, tamanho: ${length}, quantidade: ${number}`
-  );
+  // console.log(
+  //   `🔍 Buscando palavras: ${language}, tamanho: ${length}, quantidade: ${number}`
+  // );
 
   try {
     const response = await fetch(url);
@@ -32,9 +32,9 @@ async function searchWord(language, length, number) {
       .filter((word) => word && typeof word === "string")
       .map((word) => ({ word, language }));
 
-    console.log(
-      `✅ ${language}: ${filteredWords.length} palavras encontradas`
-    );
+    // console.log(
+    //   `✅ ${language}: ${filteredWords.length} palavras encontradas`
+    // );
 
     return filteredWords;
   } catch (error) {
@@ -47,11 +47,11 @@ async function searchWord(language, length, number) {
 }
 
 export async function newWord(languages, length) {
-  console.log(
-    `🎲 Sorteando palavra | Idiomas: ${languages.join(
-      ", "
-    )} | Tamanho: ${length}`
-  );
+  // console.log(
+  //   `🎲 Sorteando palavra | Idiomas: ${languages.join(
+  //     ", "
+  //   )} | Tamanho: ${length}`
+  // );
 
   const promises = languages.map((language) =>
     searchWord(language, length, 1)
@@ -61,20 +61,20 @@ export async function newWord(languages, length) {
     const wordArray = await Promise.all(promises);
     const allWords = wordArray.flat();
 
-    console.log(
-      `📊 Total de palavras candidatas: ${allWords.length}`
-    );
-    console.log("Palavras:", allWords);
+    // console.log(
+    //   `📊 Total de palavras candidatas: ${allWords.length}`
+    // );
+    // console.log("Palavras:", allWords);
 
     if (allWords.length > 0) {
       const drawnWord =
         allWords[Math.floor(Math.random() * allWords.length)];
-      console.log(
-        "🎯 Palavra sorteada:",
-        drawnWord.word,
-        "| Idioma:",
-        drawnWord.language
-      );
+      // console.log(
+      //   "🎯 Palavra sorteada:",
+      //   drawnWord.word,
+      //   "| Idioma:",
+      //   drawnWord.language
+      // );
       return drawnWord;
     } else {
       console.warn("⚠️ Nenhuma palavra encontrada.");
@@ -87,11 +87,11 @@ export async function newWord(languages, length) {
 }
 
 export async function wordDatabase(languages, length) {
-  console.log(
-    `📚 Carregando dicionário | Idiomas: ${languages.join(
-      ", "
-    )} | Tamanho: ${length}`
-  );
+  // console.log(
+  //   `📚 Carregando dicionário | Idiomas: ${languages.join(
+  //     ", "
+  //   )} | Tamanho: ${length}`
+  // );
 
   const promises = languages.map((language) =>
     searchWord(language, length, 999999999)
@@ -101,10 +101,10 @@ export async function wordDatabase(languages, length) {
     const results = await Promise.all(promises);
     const flatResults = results.flat();
 
-    console.log(
-      `📖 Dicionário carregado: ${flatResults.length} palavras totais`
-    );
-    console.log("Primeiras 10 palavras:", flatResults.slice(0, 10));
+    // console.log(
+    //   `📖 Dicionário carregado: ${flatResults.length} palavras totais`
+    // );
+    // console.log("Primeiras 10 palavras:", flatResults.slice(0, 10));
 
     return flatResults;
   } catch (error) {
@@ -122,10 +122,10 @@ export function validateWord(word, allWords) {
   }
 
   const normalizedInput = cleanString(word);
-  console.log(
-    `🔎 Validando palavra: "${word}" (normalizada: "${normalizedInput}")`
-  );
-  console.log(`📚 Dicionário tem ${allWords.length} palavras`);
+  // console.log(
+  //   `🔎 Validando palavra: "${word}" (normalizada: "${normalizedInput}")`
+  // );
+  // console.log(`📚 Dicionário tem ${allWords.length} palavras`);
 
   const found = allWords.filter((obj) => {
     if (!obj || !obj.word) {
@@ -134,12 +134,12 @@ export function validateWord(word, allWords) {
     return cleanString(obj.word) === normalizedInput;
   });
 
-  console.log(
-    `${found.length > 0 ? "✅" : "❌"} Palavra encontrada: ${
-      found.length
-    } vez(es)`,
-    found
-  );
+  // console.log(
+  //   `${found.length > 0 ? "✅" : "❌"} Palavra encontrada: ${
+  //     found.length
+  //   } vez(es)`,
+  //   found
+  // );
 
   return found;
 }

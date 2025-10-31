@@ -28,12 +28,12 @@ function Game() {
       return;
     }
 
-    console.log("🎮 Iniciando novo jogo...");
-    console.log(
-      "Idiomas selecionados:",
-      preferences.selectedLanguages
-    );
-    console.log("Tamanho da palavra:", preferences.wordLength);
+    // console.log("🎮 Iniciando novo jogo...");
+    // console.log(
+    //   "Idiomas selecionados:",
+    //   preferences.selectedLanguages
+    // );
+    // console.log("Tamanho da palavra:", preferences.wordLength);
 
     setIsLoading(true);
     setGameStarted(false);
@@ -50,9 +50,9 @@ function Game() {
         ),
       ]);
 
-      console.log("📥 Dados recebidos:");
-      console.log("Palavra sorteada:", drawnWord);
-      console.log("Tamanho do dicionário:", database?.length);
+      // console.log("📥 Dados recebidos:");
+      // console.log("Palavra sorteada:", drawnWord);
+      // console.log("Tamanho do dicionário:", database?.length);
 
       if (drawnWord) {
         setAnswer(drawnWord);
@@ -62,13 +62,13 @@ function Game() {
         setActiveIndex(0);
         setGameStarted(true);
 
-        console.log("✅ Jogo iniciado com sucesso!");
-        console.log(
-          "Resposta:",
-          drawnWord.word,
-          "| Idioma:",
-          drawnWord.language
-        );
+        // console.log("✅ Jogo iniciado com sucesso!");
+        // console.log(
+        //   "Resposta:",
+        //   drawnWord.word,
+        //   "| Idioma:",
+        //   drawnWord.language
+        // );
       } else {
         console.error("❌ Palavra sorteada é null/undefined");
         alert(
