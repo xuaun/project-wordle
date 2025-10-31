@@ -147,6 +147,25 @@ h1 {
   font-size: 2rem;
   line-height: var(--header-height);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  position: relative;
+  flex: 1;
+  min-width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.headerImg {
+  display: inline-block;
+  height: 40px;
+  margin-left: 10px;
 }
 
 @media (max-width: 25rem) {

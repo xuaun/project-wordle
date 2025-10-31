@@ -3,7 +3,9 @@ import React from "react";
 import HelpModal from "../HelpModal";
 import CreditsModal from "../CreditsModal";
 
-import { BadgeQuestionMark, CircleUserRound } from 'lucide-react';
+import { BadgeQuestionMark, CircleUserRound } from "lucide-react";
+
+import earthImage from "../../assets/Hands - Earth.png";
 
 function Header() {
   const [showHelpModal, setShowHelpModal] = React.useState(false);
@@ -30,7 +32,17 @@ function Header() {
             <BadgeQuestionMark />
           </button>
         </div>
-        <h1>So many languages 🌎</h1>
+        <div className="header-title">
+          <h1>
+            So many languages{" "}
+            <img
+              src={earthImage}
+              alt=""
+              aria-hidden="true"
+              className="headerImg"
+            />
+          </h1>
+        </div>
         <div className="side">
           <button
             className="credits-button"
