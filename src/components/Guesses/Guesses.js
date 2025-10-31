@@ -43,7 +43,7 @@ function Guesses({
           ))}
         </p>
       ))}
-      {
+      {submittedGuesses.length < totalGuesses && (
         <p className="guess">
           {range(0, wordLength).map((index) => (
             <span
@@ -57,7 +57,7 @@ function Guesses({
             </span>
           ))}
         </p>
-      }
+      )}
       {range(0, totalGuesses - submittedGuesses.length - 1).map(
         (index) => (
           <p key={index} className="guess">

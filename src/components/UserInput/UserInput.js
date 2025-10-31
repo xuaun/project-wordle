@@ -138,7 +138,7 @@ function UserInput({
           submittedGuesses={submittedGuesses}
         />
       )}
-      {submittedGuesses.length >= totalGuesses && (
+      {!isCorrect && submittedGuesses.length >= totalGuesses && (
         <Banner
           mood="sad"
           answer={answer.word.toUpperCase()}
