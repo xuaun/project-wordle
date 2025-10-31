@@ -58,8 +58,14 @@
     gap: 4px;
   }
   .key {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 0.4em;
+  }
+  .key:not(.large-key) {
+    transform: translateX(-10px);
+  }
+  .key-row:last-of-type .key:not(.large-key) {
+    transform: translateX(-15px);
   }
   .key.large-key {
     right: 0;
@@ -70,11 +76,20 @@
   .key-row {
     gap: 4px;
   }
+  .key-row:last-of-type {
+    transform: translateX(-20px);
+  }
+  .key-row:last-of-type .key:not(.large-key) {
+    transform: translateX(-8px);
+  }
   .key {
-    font-size: 0.9rem;
-    padding: 0.3em;
+    font-size: 1rem;
+    padding: 0.4em;
   }
   .key.large-key {
     right: 0;
+  }
+  .key-row:last-of-type .key.large-key {
+    transform: translateX(40px);
   }
 }
