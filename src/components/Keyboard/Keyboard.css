@@ -58,8 +58,8 @@
     gap: 4px;
   }
   .key {
-    font-size: 0.7rem;
-    padding: 0.4em calc(0.4em + 0.3rem);
+    font-size: 1rem;
+    padding: 0.4em;
   }
   .key.large-key {
     right: 0;
@@ -71,8 +71,8 @@
     gap: 4px;
   }
   .key {
-    font-size: 0.6rem;
-    padding: 0.3em calc(0.3em + 0.3rem);
+    font-size: 0.9rem;
+    padding: 0.3em;
   }
   .key.large-key {
     right: 0;

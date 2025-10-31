@@ -222,6 +222,13 @@ h1 {
   font-size: 2rem;
 }
 
+@media (max-width: 760px) {
+  .cell {
+    width: 18%;
+    font-size: 1.5rem;
+  }
+}
+
 /*
   Round the corners for the 4 cells at the very corners of
   the game board
