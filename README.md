@@ -167,7 +167,7 @@ Inside `/src/game-helpers.js`, you'll find a helper function, `checkGuess`. As p
 For example:
 
 ```js
-checkGuess('WHALE', 'LEARN');
+checkGuess("WHALE", "LEARN");
 /*
   Returns:
 
@@ -298,3 +298,77 @@ _HINT:_ This will require moving the `answer` into state. You'll want to do the 
 
 - A "Restart Game" button is shown at the end of the game. You can put this button in the `GameOverBanner`, or wherever else you'd like!
 - Clicking the button should select a new correct word and reset all other state.
+
+---
+
+# Personal Stretch Goals
+
+## How To Play Menu
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## Credits
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## Only Valid Words
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## First Row Dynamically Show Input
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## Screen Keyboard Adds Input
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## First New Input Row Can Change Input (in correct order)
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## Some Animation
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## Some New Styles
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## New Collor Palette
+
+**Acceptance Criteria:**
+
+- A
+- B
+
+## Padronizar estilos e arquivos
+
+**Acceptance Criteria:**
+
+- A
+- B

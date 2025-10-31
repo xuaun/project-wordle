@@ -1,0 +1,80 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.key-row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.key {
+  font-size: 1rem;
+  touch-action: manipulation;
+  display: grid;
+  place-content: center;
+  padding: 1em calc(1em + 0.35rem);
+  border-radius: 4px;
+  background: var(--color-key-background);
+  color: var(--color-key-text);
+  user-select: none;
+  cursor: pointer;
+}
+.key:hover {
+  background: var(--color-key-background-hover);
+}
+
+.key.large-key {
+  position: absolute;
+  right: -7em;
+  transform: translateX(20px);
+}
+
+.key.correct {
+  background: var(--color-success);
+}
+.key.misplaced {
+  background: var(--color-warning);
+}
+.key.incorrect {
+  background: var(--color-key-incorrect-background);
+}
+
+.key.correct:hover {
+  background: hsl(150deg 70% 25%);
+}
+.key.misplaced:hover {
+  background: hsl(50deg 100% 25%);
+}
+.key.incorrect:hover {
+  background: var(--color-key-incorrect-background-hover);
+}
+
+@media (max-width: 760px) {
+  .key-row {
+    gap: 4px;
+  }
+  .key {
+    font-size: 0.7rem;
+    padding: 0.4em calc(0.4em + 0.3rem);
+  }
+  .key.large-key {
+    right: 0;
+  }
+}
+
+@media (max-width: 370px) {
+  .key-row {
+    gap: 4px;
+  }
+  .key {
+    font-size: 0.6rem;
+    padding: 0.3em calc(0.3em + 0.3rem);
+  }
+  .key.large-key {
+    right: 0;
+  }
+}
