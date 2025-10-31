@@ -32,8 +32,8 @@ html {
   --color-key-text: hsl(60, 100%, 100%);
   --color-key-background: hsl(346, 100%, 77%);
   --color-key-background-hover: hsl(340, 68%, 53%);
-  --color-key-incorrect-background: hsl(0deg 0% 50%);
-  --color-key-incorrect-background-hover: hsl(0deg 0% 75%);
+  --color-key-incorrect-background: hsl(0deg 0% 65%);
+  --color-key-incorrect-background-hover: hsl(0deg 0% 78%);
 
   --color-header-background: hsl(343, 96%, 89%);
   --color-header-text: hsl(222, 52%, 11%);
