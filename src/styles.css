@@ -714,7 +714,7 @@ h1 {
 }
 
 .preferences-section {
-  background-color: var(--background-color);
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   gap: 8px;
