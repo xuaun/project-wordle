@@ -86,10 +86,6 @@ function UserInput({
       setGuess((prev) => prev + key);
       isShort && setIsShort(false);
     }
-
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
   }
 
   return (
