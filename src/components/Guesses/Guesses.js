@@ -56,6 +56,18 @@ function Guesses({
           </p>
         </div>
       )}
+      {submittedGuesses.map(({ value, key }) => (
+        <p key={key} className="guess">
+          {range(0, wordLength).map((index) => (
+            <span
+              key={index}
+              className={`cell ${value[index].status}`}
+            >
+              {value[index].letter}
+            </span>
+          ))}
+        </p>
+      ))}
       {submittedGuesses.length < totalGuesses && (
         <p className="guess">
           {range(0, wordLength).map((index) => (
