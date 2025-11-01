@@ -28,15 +28,28 @@ function Keyboard({ submittedGuesses, onKeyClick }) {
     return status;
   }
 
+  const handleKeyClick = (key, e) => {
+    e.preventDefault();
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+    onKeyClick(key);
+  };
+
   return (
     <div className="keyboard">
       {KEYS.map((row, rowIndex) => (
         <div className="key-row" key={rowIndex}>
           {row.map((key) => (
             <div
-              className={`key ${getKeyClass(key)} ${key === "ENTER" || key === "BACKSPACE" ? "large-key" : ""}`}
+              className={`key ${getKeyClass(key)} ${
+                key === "ENTER" || key === "BACKSPACE"
+                  ? "large-key"
+                  : ""
+              }`}
               key={key}
-              onClick={() => onKeyClick(key)}
+              onClick={(e) => handleKeyClick(key, e)}
+              onTouchStart={(e) => e.preventDefault()}
               style={{ cursor: "pointer" }}
             >
               {key === "BACKSPACE" ? "⌫" : key}
