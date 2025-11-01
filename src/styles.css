@@ -266,24 +266,6 @@ h1 {
   display: inline-block;
   color: var(--color-gray-900);
   background: var(--color-info);
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transition: opacity 0.4s ease-out;
-  opacity: 0;
-}
-.alert.visible,
-.invalid-word.visible {
-  opacity: 1;
-}
-
-.invalid-word {
-  font-family: "Balsamiq Sans", "Ubuntu Mono", sans-serif;
-  display: inline-block;
-  color: var(--color-gray-900);
-  background: var(--color-info);
   font-weight: bold;
   padding: 8px 16px;
   border-radius: 4px;
@@ -291,6 +273,9 @@ h1 {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transition: opacity 0.4s ease-out;
   opacity: 0;
+}
+.alert.visible {
+  opacity: 1;
 }
 
 .guess-results {

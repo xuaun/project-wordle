@@ -1,14 +1,11 @@
 import React from "react";
 
-import AnimatedAlert from "../AnimatedAlert";
-
 import { range } from "../../utils";
 
 function Guesses({
   guess,
   submittedGuesses,
   totalGuesses,
-  isShort,
   inputRef,
   activeIndex,
   setActiveIndex,
@@ -28,9 +25,6 @@ function Guesses({
 
   return (
     <>
-      <AnimatedAlert show={isShort} className="alert">
-        Guess must be {wordLength} letters long
-      </AnimatedAlert>
       {submittedGuesses.map(({ value, key }) => (
         <p key={key} className="guess">
           {range(0, wordLength).map((index) => (

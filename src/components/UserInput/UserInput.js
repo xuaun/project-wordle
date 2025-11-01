@@ -18,8 +18,6 @@ function UserInput({
   setSubmittedGuesses,
   totalGuesses,
   answer,
-  isShort,
-  setIsShort,
   inputRef,
   resetActiveIndex,
   allWords,
@@ -27,6 +25,7 @@ function UserInput({
 }) {
   const [isCorrect, setIsCorrect] = React.useState(false);
   const [isInvalid, setIsInvalid] = React.useState(false);
+  const [isShort, setIsShort] = React.useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -95,6 +94,12 @@ function UserInput({
 
   return (
     <>
+      <AnimatedAlert show={isShort} className="alert">
+        Guess must be {wordLength} letters long
+      </AnimatedAlert>
+      <AnimatedAlert show={isInvalid} className="alert">
+        Not a valid word!
+      </AnimatedAlert>
       <form className="guess-input-wrapper" onSubmit={handleSubmit}>
         <label htmlFor="guess-input">Enter your guess:</label>
         <input
@@ -124,9 +129,6 @@ function UserInput({
           maxLength={wordLength}
         />
       </form>
-      <AnimatedAlert show={isInvalid} className="invalid-word">
-        Not a valid word!
-      </AnimatedAlert>
       <Keyboard
         submittedGuesses={submittedGuesses}
         onKeyClick={handleKeyClick}

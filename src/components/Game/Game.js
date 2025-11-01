@@ -11,7 +11,6 @@ import GameMenu from "../GameMenu";
 function Game() {
   const [guess, setGuess] = React.useState("");
   const [submittedGuesses, setSubmittedGuesses] = React.useState([]);
-  const [isShort, setIsShort] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [preferences, updatePreference] = useUserPreferences();
 
@@ -111,7 +110,6 @@ function Game() {
               guess={guess}
               submittedGuesses={submittedGuesses}
               totalGuesses={NUM_OF_GUESSES_ALLOWED}
-              isShort={isShort}
               inputRef={inputRef}
               activeIndex={activeIndex}
               setActiveIndex={setActiveIndex}
@@ -125,8 +123,6 @@ function Game() {
             setSubmittedGuesses={setSubmittedGuesses}
             totalGuesses={NUM_OF_GUESSES_ALLOWED}
             answer={answer}
-            isShort={isShort}
-            setIsShort={setIsShort}
             inputRef={inputRef}
             resetActiveIndex={setActiveIndex}
             allWords={allWords}
