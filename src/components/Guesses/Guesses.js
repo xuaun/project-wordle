@@ -1,5 +1,8 @@
 import React from "react";
 
+import { AVAILABLE_LANGUAGES } from "../../services/wordService";
+import { FLAG_COMPONENTS } from "../../constants";
+
 import { range } from "../../utils";
 
 function Guesses({
@@ -10,6 +13,7 @@ function Guesses({
   activeIndex,
   setActiveIndex,
   wordLength,
+  selectedLanguages,
 }) {
   React.useEffect(() => {
     setActiveIndex(guess.length);
@@ -25,18 +29,30 @@ function Guesses({
 
   return (
     <>
-      {submittedGuesses.map(({ value, key }) => (
-        <p key={key} className="guess">
-          {range(0, wordLength).map((index) => (
-            <span
-              key={index}
-              className={`cell ${value[index].status}`}
-            >
-              {value[index].letter}
-            </span>
-          ))}
-        </p>
-      ))}
+      {selectedLanguages.length > 0 && (
+        <div className="selected-languages">
+          <p>
+            Selected Language{selectedLanguages.length > 1 ? "s" : ""}
+            :{" "}
+          </p>
+          {selectedLanguages.map((langCode, index) => {
+            const language = AVAILABLE_LANGUAGES.find(
+              (lang) => lang.code === langCode
+            );
+            const FlagComponent = FLAG_COMPONENTS[langCode];
+
+            return (
+              <span key={langCode} className="language-item">
+                {index > 0 && ", "}
+                {FlagComponent && (
+                  <FlagComponent className="flag-icon" />
+                )}
+                {language?.name || langCode}
+              </span>
+            );
+          })}
+        </div>
+      )}
       {submittedGuesses.length < totalGuesses && (
         <p className="guess">
           {range(0, wordLength).map((index) => (

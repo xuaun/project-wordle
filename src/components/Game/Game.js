@@ -114,6 +114,7 @@ function Game() {
               activeIndex={activeIndex}
               setActiveIndex={setActiveIndex}
               wordLength={preferences.wordLength}
+              selectedLanguages={preferences.selectedLanguages}
             />
           </div>
           <UserInput

@@ -787,3 +787,26 @@ input:checked + .slider:hover {
   background-color: var(--color-check-hover);
   transition: 0.4s;
 }
+
+.selected-languages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-family: "Balsamiq Sans", "Ubuntu Mono", sans-serif;
+}
+.selected-languages p {
+  font-weight: bold;
+}
+
+.selected-languages .language-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.selected-languages .flag-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 0 auto 6px;
+}
