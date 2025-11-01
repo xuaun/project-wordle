@@ -34,7 +34,7 @@ function Header() {
         </div>
         <div className="header-title">
           <h1>
-            So many languages{" "}
+            So Many Languages{" "}
             <img
               src={earthImage}
               alt=""

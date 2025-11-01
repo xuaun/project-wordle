@@ -9,6 +9,33 @@ html {
 
   --font-weight-medium: 500;
 
+  --color-background-gradient: linear-gradient(
+    90deg,
+    hsl(332deg 26% 87%) 0%,
+    hsl(323deg 26% 88%) 13%,
+    hsl(313deg 24% 89%) 18%,
+    hsl(305deg 24% 89%) 23%,
+    hsl(295deg 22% 90%) 27%,
+    hsl(288deg 21% 91%) 30%,
+    hsl(280deg 20% 91%) 33%,
+    hsl(270deg 19% 92%) 37%,
+    hsl(257deg 19% 93%) 40%,
+    hsl(250deg 18% 93%) 43%,
+    hsl(240deg 16% 94%) 46%,
+    hsl(225deg 14% 95%) 49%,
+    hsl(225deg 14% 95%) 51%,
+    hsl(240deg 16% 94%) 54%,
+    hsl(250deg 18% 93%) 57%,
+    hsl(257deg 19% 93%) 60%,
+    hsl(270deg 19% 92%) 63%,
+    hsl(280deg 20% 91%) 67%,
+    hsl(288deg 21% 91%) 70%,
+    hsl(295deg 22% 90%) 73%,
+    hsl(305deg 24% 89%) 77%,
+    hsl(313deg 24% 89%) 82%,
+    hsl(323deg 26% 88%) 87%,
+    hsl(332deg 26% 87%) 100%
+  );
   --color-background: hsl(225, 14%, 95%);
   --color-text: hsl(345, 13%, 18%);
   --color-border-hover: hsl(346, 100%, 77%);
@@ -35,6 +62,33 @@ html {
   --color-key-incorrect-background: hsl(0deg 0% 65%);
   --color-key-incorrect-background-hover: hsl(0deg 0% 78%);
 
+  --color-header-background-gradient: linear-gradient(
+    50deg,
+    hsl(340deg 68% 53%) 0%,
+    hsl(341deg 71% 55%) 4%,
+    hsl(341deg 73% 57%) 9%,
+    hsl(342deg 77% 59%) 13%,
+    hsl(342deg 80% 62%) 17%,
+    hsl(343deg 82% 64%) 22%,
+    hsl(343deg 85% 66%) 26%,
+    hsl(344deg 88% 68%) 30%,
+    hsl(344deg 91% 70%) 35%,
+    hsl(345deg 93% 72%) 39%,
+    hsl(345deg 95% 74%) 43%,
+    hsl(346deg 98% 76%) 48%,
+    hsl(346deg 98% 76%) 52%,
+    hsl(345deg 95% 74%) 57%,
+    hsl(345deg 93% 72%) 61%,
+    hsl(344deg 91% 70%) 65%,
+    hsl(344deg 88% 68%) 70%,
+    hsl(343deg 85% 66%) 74%,
+    hsl(343deg 82% 64%) 78%,
+    hsl(342deg 80% 62%) 83%,
+    hsl(342deg 77% 59%) 87%,
+    hsl(341deg 73% 57%) 91%,
+    hsl(341deg 71% 55%) 96%,
+    hsl(340deg 68% 53%) 100%
+  );
   --color-header-background: hsl(343, 96%, 89%);
   --color-header-text: hsl(222, 52%, 11%);
   --color-header-btn-background: hsl(222, 52%, 11%);
@@ -68,8 +122,9 @@ html {
   Custom styles
 */
 body {
-  font-family: sans-serif;
+  font-family: "Balsamiq Sans", sans-serif;
   background: var(--color-background);
+  background: var(--color-background-gradient);
 }
 
 @media (max-height: 600px) {
@@ -94,12 +149,26 @@ button {
   min-height: 100%;
 }
 
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: var(--header-height);
+  right: 0;
+  background-image: url("./assets/background.svg");
+  background-repeat: repeat-x;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 header {
   display: flex;
   height: var(--header-height);
   /* border-bottom: 2px solid var(--color-header-btn-border); */
   color: var(--color-header-text);
   background: var(--color-header-background);
+  background: var(--color-header-background-gradient);
 }
 
 header .side {
@@ -142,6 +211,8 @@ header button:hover {
 }
 
 h1 {
+  font-family: "Playwrite HU", "Balsamiq Sans", "Ubuntu Mono",
+    sans-serif;
   flex: 1;
   flex-basis: fit-content;
   font-size: 2rem;
@@ -187,9 +258,11 @@ h1 {
   margin: 0 auto;
   min-width: 250px;
   max-width: min(500px, 90vh, 100%);
+  position: relative;
 }
 
 .alert {
+  font-family: "Balsamiq Sans", "Ubuntu Mono", sans-serif;
   display: inline-block;
   color: var(--color-gray-900);
   background: var(--color-info);
@@ -207,6 +280,7 @@ h1 {
 }
 
 .invalid-word {
+  font-family: "Balsamiq Sans", "Ubuntu Mono", sans-serif;
   display: inline-block;
   color: var(--color-gray-900);
   background: var(--color-info);
@@ -225,6 +299,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   color: var(--color-text);
+  font-family: "Ubuntu Mono", sans-serif;
 }
 
 .guess {
@@ -243,6 +318,10 @@ h1 {
   border: 2px solid var(--color-cell-border);
   border-radius: var(--radius);
   font-size: 2rem;
+}
+
+.guess-results .cell {
+  background-color: var(--color-background);
 }
 
 @media (max-width: 760px) {
@@ -286,6 +365,7 @@ h1 {
 }
 
 .guess-input-wrapper {
+  font-family: "Ubuntu Mono", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 8px;
