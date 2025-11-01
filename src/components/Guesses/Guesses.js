@@ -4,6 +4,7 @@ import { AVAILABLE_LANGUAGES } from "../../services/wordService";
 import { FLAG_COMPONENTS } from "../../constants";
 
 import { range } from "../../utils";
+import FlagBanner from "../FlagBanner";
 
 function Guesses({
   guess,
@@ -29,28 +30,30 @@ function Guesses({
 
   return (
     <>
+      <FlagBanner selectedLanguages={selectedLanguages} />
       {selectedLanguages.length > 0 && (
         <div className="selected-languages">
           <p>
             Selected Language{selectedLanguages.length > 1 ? "s" : ""}
             :{" "}
-          </p>
-          {selectedLanguages.map((langCode, index) => {
-            const language = AVAILABLE_LANGUAGES.find(
-              (lang) => lang.code === langCode
-            );
-            const FlagComponent = FLAG_COMPONENTS[langCode];
+            {selectedLanguages.map((langCode, index) => {
+              const language = AVAILABLE_LANGUAGES.find(
+                (lang) => lang.code === langCode
+              );
+              const FlagComponent = FLAG_COMPONENTS[langCode];
 
-            return (
-              <span key={langCode} className="language-item">
-                {index > 0 && ", "}
-                {FlagComponent && (
-                  <FlagComponent className="flag-icon" />
-                )}
-                {language?.name || langCode}
-              </span>
-            );
-          })}
+              return (
+                <span key={langCode} className="language-item">
+                  {FlagComponent && (
+                    <FlagComponent className="flag-icon" />
+                  )}
+                  {`${language?.name || langCode}${
+                    index < selectedLanguages.length - 1 ? ", " : ""
+                  }`}
+                </span>
+              );
+            })}
+          </p>
         </div>
       )}
       {submittedGuesses.length < totalGuesses && (
