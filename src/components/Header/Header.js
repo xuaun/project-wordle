@@ -3,7 +3,7 @@ import React from "react";
 import HelpModal from "../HelpModal";
 import CreditsModal from "../CreditsModal";
 
-import { BadgeQuestionMark, CircleUserRound } from "lucide-react";
+import { BadgeQuestionMark, BadgeInfo } from "lucide-react";
 
 import earthImage from "../../assets/Hands - Earth.png";
 
@@ -49,7 +49,7 @@ function Header() {
             aria-label="Credits"
             onClick={handleCreditsClick}
           >
-            <CircleUserRound />
+            <BadgeInfo />
           </button>
         </div>
       </header>
