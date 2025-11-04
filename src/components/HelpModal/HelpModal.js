@@ -44,8 +44,23 @@ function HelpModal({ setShowHelpModal }) {
           </button>
           <h2 id="helpTitle">How to Play</h2>
           <div id="helpDesc">
+            <h3>In the Menu</h3>
+            <p>
+              Select which languages you want to use - you can choose
+              multiple languages.
+            </p>
+            <p>
+              And choose the length of the word you want to guess,
+              ranging from 3 to 10 letters.
+            </p>
+            <p>And then, Start Game.</p>
+            <br />
+            <h3>During the Game</h3>
             <p>Guess the word in 6 tries.</p>
-            <p>Each guess must be a valid 5-letter word.</p>
+            <p>
+              Each guess must be a valid word in one of the selected
+              languages and must match the length you specified.
+            </p>
             <p>
               After each guess, the tiles will show how close you are
               to the solution.
@@ -95,8 +110,8 @@ function HelpModal({ setShowHelpModal }) {
               </span>
             </div>
             <p>
-              The letter <span className="cell misplaced">N</span> is in
-              the word but in a different position.
+              The letter <span className="cell misplaced">N</span> is
+              in the word but in a different position.
             </p>
             <div className="example">
               <span aria-label="letter S" className="cell">
