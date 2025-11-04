@@ -60,7 +60,11 @@ From this challenge, I needed to:
 ### Screenshot
 
 <p align="center">
-  <img src="./src/design/desktop-screenshot.png" alt="Desktop Screenshot of live page" title="Desktop Screenshot of live page" width="600px" />
+  <img src="./src/assets/game-menu.png" alt="Desktop Screenshot of the game menu live page" title="Desktop Screenshot of the game menu live page" width="600px" />
+</p>
+
+<p align="center">
+  <img src="./src/assets/ingame-printscreen.png" alt="Desktop Screenshot of the in-game live page" title="Desktop Screenshot of the in-game live page" width="600px" />
 </p>
 
 ### Links
@@ -536,7 +540,11 @@ A partir deste desafio, precisei:
 ### Print
 
 <p align="center">
-  <img src="./src/design/desktop-screenshot.png" alt="Print da tela no Desktop" title="Print da tela no Desktop" width="600px" />
+  <img src="./src/assets/game-menu.png" alt="Print da tela do menu no Desktop" title="Print da tela do menu no Desktop" width="600px" />
+</p>
+
+<p align="center">
+  <img src="./src/assets/ingame-printscreen.png" alt="Print da tela do jogo no Desktop" title="Print da tela do jogo no Desktop" width="600px" />
 </p>
 
 ### <p id="links-pt">Links</p>
