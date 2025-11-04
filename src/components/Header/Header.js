@@ -12,6 +12,16 @@ function Header() {
   const [showCreditsModal, setShowCreditsModal] =
     React.useState(false);
 
+  React.useEffect(() => {
+    const hasVisitedGameBefore =
+      localStorage.getItem("hasVisitedGame");
+
+    if (!hasVisitedGameBefore) {
+      setShowHelpModal(true);
+      localStorage.setItem("hasVisitedGame", "true");
+    }
+  }, [setShowHelpModal]);
+
   function handleHelpClick() {
     setShowHelpModal(true);
   }
