@@ -62,7 +62,10 @@ function Guesses({
         </div>
       )}
       {submittedGuesses.map(({ value, foundLanguages, key }) => (
-        <p key={key} className="guess">
+        <p
+          key={key}
+          className={showLanguage ? "guess language" : "guess"}
+        >
           {range(0, wordLength).map((index) => (
             <span
               key={index}
@@ -76,6 +79,14 @@ function Guesses({
               className="languages-wrapper"
               style={{
                 "--word-length": wordLength,
+                "--correction":
+                  wordLength < 6
+                    ? "0rem"
+                    : wordLength === 6
+                    ? "1rem"
+                    : wordLength === 7
+                    ? "2rem"
+                    : "3rem",
               }}
             >
               <span
@@ -132,7 +143,7 @@ function Guesses({
         </p>
       ))}
       {submittedGuesses.length < totalGuesses && (
-        <p className="guess">
+        <p className={showLanguage ? "guess language" : "guess"}>
           {range(0, wordLength).map((index) => (
             <span
               key={index}
@@ -148,7 +159,10 @@ function Guesses({
       )}
       {range(0, totalGuesses - submittedGuesses.length - 1).map(
         (index) => (
-          <p key={index} className="guess">
+          <p
+            key={index}
+            className={showLanguage ? "guess language" : "guess"}
+          >
             {range(0, wordLength).map((cellIndex) => (
               <span key={cellIndex} className="cell"></span>
             ))}

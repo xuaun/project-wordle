@@ -148,6 +148,7 @@ button {
   min-height: 100%;
   background: var(--color-background);
   background: var(--color-background-gradient);
+  overflow-x: clip;
 }
 
 .wrapper::before {
@@ -296,6 +297,10 @@ h1 {
   justify-content: center;
 }
 
+.guess.language {
+  transform: translateX(0);
+}
+
 .cell {
   position: relative;
   width: 12%;
@@ -389,12 +394,16 @@ h1 {
     font-size: 1.5rem;
   }
 
+  .guess.language {
+    transform: translateX(-1rem);
+  }
+
   .languages-wrapper {
     transform: translateY(-50%)
       translateX(
         calc(
           50% + (var(--word-length) * 18 / 2) * 1% +
-            ((var(--word-length) - 1) * 4 / 2) * 1px + 8px
+            ((var(--word-length) - 1) * 4 / 2) * 1px + 8px - var(--correction)
         )
       );
   }
