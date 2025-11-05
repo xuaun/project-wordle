@@ -1,12 +1,19 @@
 import React from "react";
 
-function Banner({ mood, answer, submittedGuesses }) {
+import { AVAILABLE_LANGUAGES } from "../../services/wordService";
+
+function Banner({ mood, answer, language, submittedGuesses }) {
+  const correctLanguage = AVAILABLE_LANGUAGES.find(
+    (lang) => lang.code === language
+  );
+
   return (
     <>
       {mood === "happy" && (
         <div className="happy banner">
           <p>
-            <strong>Congratulations!</strong> Got {answer} in
+            <strong>Congratulations!</strong> Got {answer} (
+            {correctLanguage?.name || language}) in
             <strong> {submittedGuesses.length} guesses</strong>.
           </p>
           <button onClick={() => window.location.reload()}>
@@ -17,7 +24,8 @@ function Banner({ mood, answer, submittedGuesses }) {
       {mood === "sad" && (
         <div className="sad banner">
           <p>
-            Sorry, the correct answer is <strong>{answer}</strong>.
+            Sorry, the correct answer is <strong>{answer}</strong> (
+            {correctLanguage?.name || language}).
           </p>
           <button onClick={() => window.location.reload()}>
             Try Again

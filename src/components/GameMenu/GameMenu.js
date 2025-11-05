@@ -12,6 +12,8 @@ function GameMenu({
   setDarkMode,
   reduceMotion,
   setReduceMotion,
+  showLanguage,
+  setShowLanguage,
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +39,19 @@ function GameMenu({
             onChange={(e) => setWordLength(parseInt(e.target.value))}
             disabled={isLoading}
           />
+        </label>
+      </div>
+
+      <div className="language-show-wrapper preferences-section">
+        <label className="language-show preference-toggle switch">
+          <input
+            type="checkbox"
+            checked={showLanguage}
+            onChange={(e) => setShowLanguage(e.target.checked)}
+            disabled={isLoading}
+          />
+          <span className="slider round"></span>
+          Show Language Hints
         </label>
       </div>
 

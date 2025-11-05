@@ -102,6 +102,10 @@ function Game() {
           }
           startNewGame={startNewGame}
           isLoading={isLoading}
+          showLanguage={preferences.showLanguage}
+          setShowLanguage={(show) =>
+            updatePreference("showLanguage", show)
+          }
         />
       ) : (
         <>
@@ -115,6 +119,8 @@ function Game() {
               setActiveIndex={setActiveIndex}
               wordLength={preferences.wordLength}
               selectedLanguages={preferences.selectedLanguages}
+              answer={answer}
+              showLanguage={preferences.showLanguage}
             />
           </div>
           <UserInput

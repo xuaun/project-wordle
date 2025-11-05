@@ -1,6 +1,9 @@
 import React from "react";
 
-import { AVAILABLE_LANGUAGES } from "../../services/wordService";
+import {
+  AVAILABLE_LANGUAGES,
+  cleanString,
+} from "../../services/wordService";
 import { FLAG_COMPONENTS } from "../../constants";
 
 import { range } from "../../utils";
@@ -15,6 +18,8 @@ function Guesses({
   setActiveIndex,
   wordLength,
   selectedLanguages,
+  answer,
+  showLanguage,
 }) {
   React.useEffect(() => {
     setActiveIndex(guess.length);
@@ -56,7 +61,7 @@ function Guesses({
           </p>
         </div>
       )}
-      {submittedGuesses.map(({ value, key }) => (
+      {submittedGuesses.map(({ value, foundLanguages, key }) => (
         <p key={key} className="guess">
           {range(0, wordLength).map((index) => (
             <span
@@ -66,6 +71,64 @@ function Guesses({
               {value[index].letter}
             </span>
           ))}
+          {showLanguage && foundLanguages.length > 0 ? (
+            <span
+              className="languages-wrapper"
+              style={{
+                "--word-length": wordLength,
+              }}
+            >
+              <span
+                className={`found-languages ${
+                  value.map((item) => item.letter).join("") ===
+                  cleanString(answer.word).toUpperCase()
+                    ? ""
+                    : foundLanguages.includes(answer.language) &&
+                      foundLanguages.length > 1
+                    ? "misplaced"
+                    : ""
+                }`}
+              >
+                {foundLanguages.map((language) => {
+                  const FlagComponent = FLAG_COMPONENTS[language];
+                  return (
+                    <span
+                      key={language}
+                      className={`round-cell ${
+                        foundLanguages.length > 1 &&
+                        value.map((item) => item.letter).join("") ===
+                          cleanString(answer.word).toUpperCase() &&
+                        language === answer.language
+                          ? "correct-language"
+                          : foundLanguages.length > 1 &&
+                            value
+                              .map((item) => item.letter)
+                              .join("") ===
+                              cleanString(
+                                answer.word
+                              ).toUpperCase() &&
+                            language !== answer.language
+                          ? "incorrect-language"
+                          : foundLanguages.length > 1 &&
+                            foundLanguages.includes(answer.language)
+                          ? "misplaced-language"
+                          : language === answer.language
+                          ? "correct-language"
+                          : "incorrect-language"
+                      }`}
+                    >
+                      {FlagComponent && (
+                        <FlagComponent className="flag-icon" />
+                      )}
+                      <span className="visually-hidden">
+                        {language}
+                      </span>
+                    </span>
+                  );
+                })}
+              </span>
+            </span>
+          ) : null}
         </p>
       ))}
       {submittedGuesses.length < totalGuesses && (

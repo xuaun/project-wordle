@@ -53,6 +53,9 @@ function UserInput({
 
     const nextGuess = {
       value: result,
+      foundLanguages: Array.from(
+        new Set(foundWords.map((word) => word.language))
+      ),
       key: crypto.randomUUID(),
     };
 
@@ -133,6 +136,7 @@ function UserInput({
         <Banner
           mood="happy"
           answer={answer.word.toUpperCase()}
+          language={answer.language}
           submittedGuesses={submittedGuesses}
         />
       )}
@@ -140,6 +144,7 @@ function UserInput({
         <Banner
           mood="sad"
           answer={answer.word.toUpperCase()}
+          language={answer.language}
           submittedGuesses={submittedGuesses}
         />
       )}

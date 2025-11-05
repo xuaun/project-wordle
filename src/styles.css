@@ -289,6 +289,7 @@ h1 {
 }
 
 .guess {
+  position: relative;
   display: flex;
   gap: 4px;
   margin-bottom: 4px;
@@ -306,6 +307,68 @@ h1 {
   font-size: 2rem;
 }
 
+.languages-wrapper {
+  position: absolute;
+  min-width: 100%;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%)
+    translateX(
+      calc(
+        50% + (var(--word-length) * 12 / 2) * 1% +
+          ((var(--word-length) - 1) * 4 / 2) * 1px + 8px
+      )
+    );
+}
+
+.found-languages {
+  display: flex;
+  gap: 4px;
+  background-color: none;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.found-languages.misplaced {
+  background-color: var(--color-warning);
+}
+
+.round-cell {
+  position: relative;
+  width: 35px;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--color-cell-border);
+  border-radius: 50%;
+  color: var(--color-gray-700);
+}
+
+.guess-results .round-cell {
+  background-color: var(--color-background);
+}
+.guess-results .round-cell .flag-icon {
+  box-shadow: 0 0 2px 1px var(--color-gray-700);
+}
+
+.round-cell.correct-language {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+.round-cell.misplaced-language {
+  background-color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+.round-cell.incorrect-language {
+  background: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+}
+
+.round-cell .flag-icon {
+  width: 20px;
+  height: 100%;
+}
+
 .guess-results .cell {
   background-color: var(--color-background);
 }
@@ -314,6 +377,32 @@ h1 {
   .cell {
     width: 18%;
     font-size: 1.5rem;
+  }
+
+  .languages-wrapper {
+    transform: translateY(-50%)
+      translateX(
+        calc(
+          50% + (var(--word-length) * 18 / 2) * 1% +
+            ((var(--word-length) - 1) * 4 / 2) * 1px + 8px
+        )
+      );
+  }
+
+  .found-languages {
+    flex-wrap: wrap;
+    gap: 0.5px;
+    width: 47px;
+  }
+
+  .round-cell {
+    width: 22px;
+  }
+  .round-cell:nth-child(2) {
+    margin-right: calc(100% - 60px);
+  }
+  .round-cell .flag-icon {
+    width: 12px;
   }
 }
 

@@ -17,6 +17,7 @@ export function useUserPreferences() {
     ).matches;
 
     return {
+      showLanguage: true,
       reduceMotion: prefersReducedMotion,
       darkMode: prefersDarkMode,
       selectedLanguages: ["pt-br", "en"],
