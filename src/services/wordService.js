@@ -27,6 +27,10 @@ async function searchWord(language, length, number) {
 
   try {
     const response = await fetch(url);
+    if (!response.ok) {
+      console.error(`❌ API returned status ${response.status} for ${language}`);
+      return [];
+    }
     const words = await response.json();
     const filteredWords = words
       .filter((word) => word && typeof word === "string")
@@ -39,7 +43,7 @@ async function searchWord(language, length, number) {
     return filteredWords;
   } catch (error) {
     console.error(
-      `❌ Erro ao buscar palavras em ${language}:`,
+      `❌ Error searching words in ${language}:`,
       error
     );
     return [];
@@ -108,7 +112,7 @@ export async function wordDatabase(languages, length) {
 
     return flatResults;
   } catch (error) {
-    console.error("❌ Erro ao carregar dicionário:", error);
+    console.error("❌ Error loading dictionary:", error);
     return [];
   }
 }
@@ -116,7 +120,7 @@ export async function wordDatabase(languages, length) {
 export function validateWord(word, allWords) {
   if (!word || !Array.isArray(allWords)) {
     console.warn(
-      "⚠️ Validação falhou: palavra ou dicionário inválido"
+      "⚠️ Validation failed: invalid word or dictionary"
     );
     return [];
   }
