@@ -33,8 +33,8 @@ function GameMenu({
           Word Length (characters):{" "}
           <input
             type="number"
-            min="3"
-            max="10"
+            min="4"
+            max="8"
             value={wordLength}
             onChange={(e) => setWordLength(parseInt(e.target.value))}
             disabled={isLoading}
