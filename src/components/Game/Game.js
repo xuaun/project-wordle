@@ -23,7 +23,7 @@ function Game() {
 
   const startNewGame = React.useCallback(async () => {
     if (preferences.selectedLanguages.length === 0) {
-      alert("Selecione pelo menos um idioma!");
+      alert("Select at least one language!");
       return;
     }
 
@@ -69,14 +69,14 @@ function Game() {
         //   drawnWord.language
         // );
       } else {
-        console.error("❌ Palavra sorteada é null/undefined");
+        console.error("❌ The word drawn is null/undefined");
         alert(
-          "Não foi possível encontrar uma palavra. Tente outros idiomas."
+          "Could not find a word. Please try other languages."
         );
       }
     } catch (error) {
-      console.error("❌ Erro ao iniciar jogo:", error);
-      alert("Erro ao iniciar o jogo. Tente novamente.");
+      console.error("❌ Error starting game:", error);
+      alert("Error starting the game. Please try again.");
     } finally {
       setIsLoading(false);
     }
