@@ -54,6 +54,7 @@ From this challenge, I needed to:
     - [Screen Keyboard Adds Input](#screen-keyboard-adds-input)
     - [First New Input Row Can Change Input (in correct order)](#first-new-input-row-can-change-input-in-correct-order)
     - [New Color Palette](#new-color-palette)
+    - [Language hints](#language-hints)
 
 ## Overview
 
@@ -480,6 +481,14 @@ _HINT:_ This will require moving the `answer` into state. You'll want to do the 
 - Allow users to switch between color palettes
 - Maintain color meaning (correct, misplaced, incorrect)
 
+### Language hints
+
+**Acceptance Criteria:**
+
+- Add toggle to enable/disable language hints in game menu
+- Display visual hints during ganeplay if the language of the guess is correct/incorrect
+- Ensure hints don't give away the answer
+
 ---
 
 <br>
@@ -534,6 +543,7 @@ A partir deste desafio, precisei:
     - [Teclado na Tela Adiciona Entrada](#teclado-na-tela-adiciona-entrada)
     - [Primeira Nova Linha de Entrada Pode Mudar Entrada (na ordem correta)](#primeira-nova-linha-de-entrada-pode-mudar-entrada-na-ordem-correta)
     - [Nova Paleta de Cores](#nova-paleta-de-cores)
+    - [Dicas de Idioma](#dicas-de-idioma)
 
 ## Visão Geral
 
@@ -961,3 +971,11 @@ _DICA:_ Isso exigirá mover a `answer` para o estado. Você vai querer fazer a s
 - Garantir contraste suficiente para acessibilidade
 - Permitir que os usuários alternem entre paletas de cores
 - Manter significado das cores (correto, mal posicionado, incorreto)
+
+### Dicas de Idioma
+
+**Critérios de Aceitação:**
+
+- Adicionar alternância para habilitar/desabilitar dicas de idioma no menu do jogo
+- Exibir dicas visuais durante o jogo se o idioma do palpite estiver correto/incorreto
+- Garantir que as dicas não revelem a resposta
