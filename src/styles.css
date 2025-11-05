@@ -256,10 +256,10 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: var(--game-spacing);
-  padding: var(--game-spacing) 32px;
+  padding: var(--game-spacing) 0;
   margin: 0 auto;
-  min-width: 250px;
-  max-width: min(500px, 90vh, 100%);
+  min-width: 200px;
+  max-width: min(500px, 90vh, 80%);
   position: relative;
 }
 
@@ -316,14 +316,8 @@ h1 {
   position: absolute;
   min-width: 100%;
   top: 50%;
-  right: 0;
-  transform: translateY(-50%)
-    translateX(
-      calc(
-        50% + (var(--word-length) * 12 / 2) * 1% +
-          ((var(--word-length) - 1) * 4 / 2) * 1px + 8px
-      )
-    );
+  left: 101%;
+  transform: translateY(-50%);
 }
 
 .found-languages {
@@ -396,16 +390,6 @@ h1 {
 
   .guess.language {
     transform: translateX(-1rem);
-  }
-
-  .languages-wrapper {
-    transform: translateY(-50%)
-      translateX(
-        calc(
-          50% + (var(--word-length) * 18 / 2) * 1% +
-            ((var(--word-length) - 1) * 4 / 2) * 1px + 8px - var(--correction)
-        )
-      );
   }
 
   .found-languages {

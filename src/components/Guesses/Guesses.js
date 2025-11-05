@@ -75,20 +75,7 @@ function Guesses({
             </span>
           ))}
           {showLanguage && foundLanguages.length > 0 ? (
-            <div
-              className="languages-wrapper"
-              style={{
-                "--word-length": wordLength,
-                "--correction":
-                  wordLength < 6
-                    ? "0rem"
-                    : wordLength === 6
-                    ? "1rem"
-                    : wordLength === 7
-                    ? "2rem"
-                    : "3rem",
-              }}
-            >
+            <div className="languages-wrapper">
               <span
                 className={`found-languages ${
                   value.map((item) => item.letter).join("") ===
