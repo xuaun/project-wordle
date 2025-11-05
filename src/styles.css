@@ -216,7 +216,7 @@ h1 {
     sans-serif;
   flex: 1;
   flex-basis: fit-content;
-  font-size: 2rem;
+  font-size: clamp(1.25rem, -1.75rem + 12vw, 2rem);
   line-height: var(--header-height);
   text-align: center;
   display: flex;
@@ -242,7 +242,7 @@ h1 {
 
 @media (max-width: 25rem) {
   h1 {
-    font-size: 1.25rem;
+    font-size: clamp(0.9rem, -0.9083rem + 9.3333vw, 1.25rem);
   }
   header button {
     width: 2rem;
