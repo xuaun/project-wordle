@@ -347,7 +347,7 @@ h1 {
 .guess-results .round-cell {
   background-color: var(--color-background);
 }
-.guess-results .round-cell .flag-icon {
+.round-cell .flag-icon {
   box-shadow: 0 0 2px 1px var(--color-gray-700);
 }
 
@@ -364,9 +364,19 @@ h1 {
   border-color: var(--color-gray-300);
 }
 
+.flag-example.round-cell {
+  display: inline-block;
+  width: 28px;
+  margin: auto;
+}
+
+.flag-example.round-cell .flag-icon {
+  width: 18px;
+  margin: 0 auto;
+}
+
 .round-cell .flag-icon {
   width: 20px;
-  height: 100%;
 }
 
 .guess-results .cell {
@@ -609,6 +619,8 @@ h1 {
   position: relative;
   max-height: 80vh;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-content h2 {
@@ -623,14 +635,19 @@ h1 {
 }
 
 .modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+  position: sticky;
+  transform: translateY(-50%);
+  top: -20px;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-bottom: -2.5rem;
+  background: hsla(0deg, 0%, 10%, 0.8);
+  padding: 0.05rem 0.5rem;
   border: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--color-gray-500);
+  z-index: 2;
 }
 
 .modal-close:hover {
@@ -638,14 +655,20 @@ h1 {
 }
 
 .example {
+  position: relative;
   display: flex;
   gap: 4px;
   margin: 1.5rem 0;
+  overflow: hidden;
 }
 
 .example .cell {
   width: 12%;
   font-size: 1.5rem;
+}
+
+.example .languages-wrapper {
+  width: fit-content;
 }
 
 .modal-content p .cell {
