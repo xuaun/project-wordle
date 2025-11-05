@@ -316,7 +316,7 @@ h1 {
   position: absolute;
   min-width: 100%;
   top: 50%;
-  left: 101%;
+  left: 105%;
   transform: translateY(-50%);
 }
 
@@ -390,6 +390,10 @@ h1 {
 
   .guess.language {
     transform: translateX(-1rem);
+  }
+
+  .languages-wrapper {
+    left: 101%;
   }
 
   .found-languages {
