@@ -72,7 +72,7 @@ function Guesses({
             </span>
           ))}
           {showLanguage && foundLanguages.length > 0 ? (
-            <span
+            <div
               className="languages-wrapper"
               style={{
                 "--word-length": wordLength,
@@ -127,7 +127,7 @@ function Guesses({
                   );
                 })}
               </span>
-            </span>
+            </div>
           ) : null}
         </p>
       ))}
