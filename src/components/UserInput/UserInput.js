@@ -27,6 +27,15 @@ function UserInput({
   const [isInvalid, setIsInvalid] = React.useState(false);
   const [isShort, setIsShort] = React.useState(false);
 
+  React.useEffect(() => {
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+    if (!isTouchDevice && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
   function handleSubmit(event) {
     event.preventDefault();
 
