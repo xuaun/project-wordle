@@ -48,7 +48,11 @@ function Guesses({
               const FlagComponent = FLAG_COMPONENTS[langCode];
 
               return (
-                <span key={langCode} className="language-item">
+                <span
+                  key={langCode}
+                  className="language-item"
+                  lang={langCode}
+                >
                   {FlagComponent && (
                     <FlagComponent className="flag-icon" />
                   )}
