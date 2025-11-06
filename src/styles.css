@@ -670,7 +670,8 @@ h1 {
 }
 
 .example .languages-wrapper {
-  width: fit-content;
+  min-width: fit-content;
+  left: 68%;
 }
 
 .modal-content p .cell {

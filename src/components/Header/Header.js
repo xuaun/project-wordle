@@ -34,12 +34,9 @@ function Header() {
     <>
       <header>
         <div className="side">
-          <button
-            className="help-button"
-            aria-label="How to play"
-            onClick={handleHelpClick}
-          >
+          <button className="help-button" onClick={handleHelpClick}>
             <BadgeQuestionMark />
+            <span className="visually-hidden">How to play</span>
           </button>
         </div>
         <div className="header-title">
@@ -58,10 +55,10 @@ function Header() {
         <div className="side">
           <button
             className="credits-button"
-            aria-label="Credits"
             onClick={handleCreditsClick}
           >
             <BadgeInfo />
+            <span className="visually-hidden">Credits</span>
           </button>
         </div>
       </header>
