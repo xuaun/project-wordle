@@ -3,23 +3,44 @@ import { FocusTrap } from "focus-trap-react";
 import { FLAG_COMPONENTS } from "../../constants";
 
 function HelpModal({ setShowHelpModal }) {
+  const modalRef = React.useRef(null);
+
   React.useEffect(() => {
+    const previouslyFocusedElement = document.activeElement;
+
     document.body.style.overflow = "hidden";
     document
       .querySelector("header")
-      .setAttribute("aria-hidden", "true");
-    document.body.setAttribute("aria-hidden", "true");
+      ?.setAttribute("aria-hidden", "true");
     document
-      .querySelector("#helpModal")
-      .setAttribute("aria-hidden", "false");
+      .querySelector(".game-wrapper")
+      ?.setAttribute("aria-hidden", "true");
+
+    const closeButton =
+      modalRef.current?.querySelector(".modal-close");
+    closeButton?.focus();
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setShowHelpModal(false);
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+
     return () => {
       document.body.style.overflow = "unset";
       document
         .querySelector("header")
-        .setAttribute("aria-hidden", "false");
-      document.body.setAttribute("aria-hidden", "false");
+        ?.setAttribute("aria-hidden", "false");
+      document
+        .querySelector(".game-wrapper")
+        ?.setAttribute("aria-hidden", "false");
+
+      document.removeEventListener("keydown", handleEscape);
+
+      previouslyFocusedElement?.focus();
     };
-  }, []);
+  }, [setShowHelpModal]);
 
   const CorrectFlagComponent = FLAG_COMPONENTS["pt-br"];
   const IncorrectFlagComponent = FLAG_COMPONENTS["en"];
@@ -79,24 +100,32 @@ function HelpModal({ setShowHelpModal }) {
               <span className="cell correct">
                 <span aria-hidden="true">W</span>
                 <span className="visually-hidden">
-                  letter W in the correct position
+                  letter W in the correct position <br />
                 </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">O</span>
-                <span className="visually-hidden">letter O</span>
+                <span className="visually-hidden">
+                  letter O <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">R</span>
-                <span className="visually-hidden">letter R</span>
+                <span className="visually-hidden">
+                  letter R <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">L</span>
-                <span className="visually-hidden">letter L</span>
+                <span className="visually-hidden">
+                  letter L <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">D</span>
-                <span className="visually-hidden">letter D</span>
+                <span className="visually-hidden">
+                  letter D <br />
+                </span>
               </span>
             </div>
             <p>
@@ -106,25 +135,33 @@ function HelpModal({ setShowHelpModal }) {
             <div className="example">
               <span className="cell">
                 <span aria-hidden="true">M</span>
-                <span className="visually-hidden">letter M</span>
+                <span className="visually-hidden">
+                  letter M <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">O</span>
-                <span className="visually-hidden">letter O</span>
+                <span className="visually-hidden">
+                  letter O <br />
+                </span>
               </span>
               <span className="cell misplaced">
                 <span aria-hidden="true">N</span>
                 <span className="visually-hidden">
-                  letter N is misplaced
+                  letter N is misplaced <br />
                 </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">T</span>
-                <span className="visually-hidden">letter T</span>
+                <span className="visually-hidden">
+                  letter T <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">H</span>
-                <span className="visually-hidden">letter H</span>
+                <span className="visually-hidden">
+                  letter H <br />
+                </span>
               </span>
             </div>
             <p>
@@ -134,25 +171,33 @@ function HelpModal({ setShowHelpModal }) {
             <div className="example">
               <span className="cell">
                 <span aria-hidden="true">S</span>
-                <span className="visually-hidden">letter S</span>
+                <span className="visually-hidden">
+                  letter S <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">U</span>
-                <span className="visually-hidden">letter U</span>
+                <span className="visually-hidden">
+                  letter U <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">G</span>
-                <span className="visually-hidden">letter G</span>
+                <span className="visually-hidden">
+                  letter G <br />
+                </span>
               </span>
               <span className="cell incorrect">
                 <span aria-hidden="true">A</span>
                 <span className="visually-hidden">
-                  letter A in the wrong position
+                  letter A in the wrong position <br />
                 </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">R</span>
-                <span className="visually-hidden">letter R</span>
+                <span className="visually-hidden">
+                  letter R <br />
+                </span>
               </span>
             </div>
             <p>
@@ -169,23 +214,33 @@ function HelpModal({ setShowHelpModal }) {
             <div className="example">
               <span className="cell">
                 <span aria-hidden="true">A</span>
-                <span className="visually-hidden">letter A</span>
+                <span className="visually-hidden">
+                  letter A <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">M</span>
-                <span className="visually-hidden">letter M</span>
+                <span className="visually-hidden">
+                  letter M <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">O</span>
-                <span className="visually-hidden">letter O</span>
+                <span className="visually-hidden">
+                  letter O <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">R</span>
-                <span className="visually-hidden">letter R</span>
+                <span className="visually-hidden">
+                  letter R <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">A</span>
-                <span className="visually-hidden">letter A</span>
+                <span className="visually-hidden">
+                  letter A <br />
+                </span>
               </span>
               <div
                 className="languages-wrapper"
@@ -198,7 +253,7 @@ function HelpModal({ setShowHelpModal }) {
                       Português
                     </span>
                     <span className="visually-hidden">
-                      Correct Language
+                      Correct Language <br />
                     </span>
                   </span>
                 </span>
@@ -217,23 +272,33 @@ function HelpModal({ setShowHelpModal }) {
             <div className="example">
               <span className="cell">
                 <span aria-hidden="true">L</span>
-                <span className="visually-hidden">letter L</span>
+                <span className="visually-hidden">
+                  letter L <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">O</span>
-                <span className="visually-hidden">letter O</span>
+                <span className="visually-hidden">
+                  letter O <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">V</span>
-                <span className="visually-hidden">letter V</span>
+                <span className="visually-hidden">
+                  letter V <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">E</span>
-                <span className="visually-hidden">letter E</span>
+                <span className="visually-hidden">
+                  letter E <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">R</span>
-                <span className="visually-hidden">letter R</span>
+                <span className="visually-hidden">
+                  letter R <br />
+                </span>
               </span>
               <div
                 className="languages-wrapper"
@@ -246,7 +311,7 @@ function HelpModal({ setShowHelpModal }) {
                       English
                     </span>
                     <span className="visually-hidden">
-                      Incorrect Language
+                      Incorrect Language <br />
                     </span>
                   </span>
                 </span>
@@ -263,23 +328,33 @@ function HelpModal({ setShowHelpModal }) {
             <div className="example">
               <span className="cell">
                 <span aria-hidden="true">M</span>
-                <span className="visually-hidden">letter M</span>
+                <span className="visually-hidden">
+                  letter M <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">O</span>
-                <span className="visually-hidden">letter O</span>
+                <span className="visually-hidden">
+                  letter O <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">V</span>
-                <span className="visually-hidden">letter V</span>
+                <span className="visually-hidden">
+                  letter V <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">E</span>
-                <span className="visually-hidden">letter E</span>
+                <span className="visually-hidden">
+                  letter E <br />
+                </span>
               </span>
               <span className="cell">
                 <span aria-hidden="true">R</span>
-                <span className="visually-hidden">letter R</span>
+                <span className="visually-hidden">
+                  letter R <br />
+                </span>
               </span>
               <div
                 className="languages-wrapper"
@@ -287,7 +362,7 @@ function HelpModal({ setShowHelpModal }) {
               >
                 <span className="found-languages misplaced">
                   <span className="visually-hidden">
-                    One of the guess languages is correct
+                    One of the guess is the correct language
                   </span>
                   <span className="round-cell misplaced-language">
                     <CorrectFlagComponent className="flag-icon" />
@@ -298,7 +373,7 @@ function HelpModal({ setShowHelpModal }) {
                   <span className="round-cell misplaced-language">
                     <IncorrectFlagComponent className="flag-icon" />
                     <span className="visually-hidden" lang="en">
-                      English
+                      English <br />
                     </span>
                   </span>
                 </span>
