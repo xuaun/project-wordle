@@ -43,15 +43,17 @@ function Header() {
           </button>
         </div>
         <div className="header-title">
-          <h1>
-            So Many Languages{" "}
-            <img
-              src={earthImage}
-              alt=""
-              aria-hidden="true"
-              className="headerImg"
-            />
-          </h1>
+          <a href="./">
+            <h1>
+              So Many Languages{" "}
+              <img
+                src={earthImage}
+                alt=""
+                aria-hidden="true"
+                className="headerImg"
+              />
+            </h1>
+          </a>
         </div>
         <div className="side">
           <button
