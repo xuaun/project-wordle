@@ -23,9 +23,14 @@ function LanguageSelector({ selectedLanguages, onChange, disabled }) {
           const FlagComponent = FLAG_COMPONENTS[lang.code];
           return (
             <div className="checkbox-wrapper-40" key={lang.code}>
-              <label className="language-option">
+              <label
+                className="language-option"
+                htmlFor={`lang-${lang.code}`}
+              >
                 <input
                   type="checkbox"
+                  id={`lang-${lang.code}`}
+                  name={`lang-${lang.code}`}
                   checked={selectedLanguages.includes(lang.code)}
                   onChange={() => handleToggle(lang.code)}
                   disabled={disabled}
