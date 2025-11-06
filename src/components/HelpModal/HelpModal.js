@@ -183,8 +183,10 @@ function HelpModal({ setShowHelpModal }) {
               </div>
             </div>
             <p>
-              The guess <strong>A M O R A</strong> language
-              (Português) matches the answer's language{" "}
+              The guess <strong lang="pt-BR">A M O R A</strong>{" "}
+              language
+              <span lang="pt-BR">(Português)</span> matches the
+              answer's language{" "}
               <span className="flag-example round-cell correct-language">
                 <CorrectFlagComponent className="flag-icon" />
               </span>
@@ -260,7 +262,8 @@ function HelpModal({ setShowHelpModal }) {
             </div>
             <p>
               One of the guess <strong>M O V E R</strong> possible
-              languages (Português and English) matches the answer's
+              languages (<span lang="pt-BR">Português</span> and{" "}
+              <span lang="en">English</span>) matches the answer's
               language{" "}
               <span className="flag-example round-cell misplaced-language">
                 <CorrectFlagComponent className="flag-icon" />

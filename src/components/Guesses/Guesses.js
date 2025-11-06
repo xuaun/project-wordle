@@ -118,8 +118,15 @@ function Guesses({
                       {FlagComponent && (
                         <FlagComponent className="flag-icon" />
                       )}
-                      <span className="visually-hidden">
-                        {language}
+                      <span
+                        className="visually-hidden"
+                        lang={language}
+                      >
+                        {
+                          AVAILABLE_LANGUAGES.find(
+                            (lang) => lang.code === language
+                          )?.name
+                        }
                       </span>
                     </span>
                   );

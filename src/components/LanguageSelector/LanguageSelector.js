@@ -22,7 +22,7 @@ function LanguageSelector({ selectedLanguages, onChange, disabled }) {
         {AVAILABLE_LANGUAGES.map((lang) => {
           const FlagComponent = FLAG_COMPONENTS[lang.code];
           return (
-            <div className="checkbox-wrapper-40" key={lang.code} >
+            <div className="checkbox-wrapper-40" key={lang.code}>
               <label className="language-option">
                 <input
                   type="checkbox"
@@ -34,7 +34,7 @@ function LanguageSelector({ selectedLanguages, onChange, disabled }) {
                 {FlagComponent && (
                   <FlagComponent className="language-flag" />
                 )}
-                <span>{lang.name}</span>
+                <span lang={lang.code}>{lang.name}</span>
               </label>
             </div>
           );
