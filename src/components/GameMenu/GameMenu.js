@@ -98,6 +98,9 @@ function GameMenu({
         disabled={isLoading || selectedLanguages.length === 0}
         className="start-game-btn"
         name="start-game-btn"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
       >
         {isLoading ? "Loading..." : "Start Game"}
       </button>
