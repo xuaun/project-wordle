@@ -116,6 +116,9 @@ html {
   --color-gray-500: hsl(0deg 0% 50%);
   --color-gray-700: hsl(0deg 0% 75%);
   --color-gray-900: hsl(0deg 0% 90%);
+
+  --color-skip-link-background: hsl(222, 52%, 11%);
+  --color-skip-link-text: hsl(60, 100%, 100%);
 }
 
 /*
@@ -998,4 +1001,19 @@ input:checked + .slider:hover {
 
 .flag-wrapper:nth-child(5n) .flag {
   animation-delay: 0.8s;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-skip-link-background);
+  color: var(--color-skip-link-text);
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
 }
