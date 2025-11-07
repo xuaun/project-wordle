@@ -47,7 +47,7 @@
   background: hsl(150deg 70% 25%);
 }
 .key.misplaced:hover {
-  background: hsl(50deg 100% 25%);
+  background: hsl(50deg 100% 22%);
 }
 .key.incorrect:hover {
   background: var(--color-key-incorrect-background-hover);

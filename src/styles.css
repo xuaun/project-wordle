@@ -53,14 +53,14 @@ html {
   --color-cell-active: hsl(346, 100%, 77%);
 
   --color-input-border: hsl(346, 100%, 77%);
-  --color-input-text: hsl(340, 68%, 53%);
+  --color-input-text: hsl(340, 68%, 50%);
   --color-input-placeholder: hsl(346, 100%, 77%);
 
   --color-key-text: hsl(60, 100%, 100%);
-  --color-key-background: hsl(346, 100%, 77%);
-  --color-key-background-hover: hsl(340, 68%, 53%);
-  --color-key-incorrect-background: hsl(0deg 0% 65%);
-  --color-key-incorrect-background-hover: hsl(0deg 0% 78%);
+  --color-key-background: hsl(340, 68%, 50%);
+  --color-key-background-hover: hsl(346, 100%, 77%);
+  --color-key-incorrect-background: hsl(0deg 0% 46%);
+  --color-key-incorrect-background-hover: hsl(0deg 0% 60%);
 
   --color-header-background-gradient: linear-gradient(
     50deg,
@@ -102,7 +102,7 @@ html {
   --color-joy: hsl(45deg 100% 50%);
 
   --color-success: hsl(150deg 70% 30%);
-  --color-warning: hsl(50deg 100% 30%);
+  --color-warning: hsl(50deg 100% 27%);
   --color-error: hsl(0deg 70% 45%);
   --color-info: hsl(210deg 100% 50%);
 
