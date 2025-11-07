@@ -391,6 +391,12 @@ function HelpModal({ setShowHelpModal }) {
             </p>
             <br />
             <p>A new word appears every page reload.</p>
+            <br />
+            <h3>Keyboard Shortcuts</h3>
+            <p>
+              You can use <strong>Alt + 1-6</strong> to quickly jump
+              to and read your previous guesses with a screen reader.
+            </p>
           </div>
         </div>
       </div>
