@@ -17,7 +17,7 @@ function LanguageSelector({ selectedLanguages, onChange, disabled }) {
 
   return (
     <div className="language-selector">
-      <h3>Select Languages:</h3>
+      <p className="language-selector-title">Select Languages:</p>
       <div className="language-options">
         {AVAILABLE_LANGUAGES.map((lang) => {
           const FlagComponent = FLAG_COMPONENTS[lang.code];

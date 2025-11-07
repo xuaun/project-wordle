@@ -107,3 +107,8 @@
 .checkbox-wrapper-40 input[type="checkbox"]:focus {
   outline: calc(var(--borderWidth) / 1.5) dotted var(--color-focus);
 }
+
+.language-selector-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
